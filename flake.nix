@@ -89,8 +89,18 @@
         packages.default = self'.packages.main-hello;
 
         # Default shell.
-        devShells.default =
-          config.mission-control.installToDevShell self'.devShells.main;
+        devShells = {
+          default =
+            config.mission-control.installToDevShell self'.devShells.main;
+          book = pkgs.mkShell {
+            buildInputs = with pkgs; [
+              mdbook
+            ];
+            shellHook = ''
+              export PS1="\e[0;32m(haskell)\$ \e[m" 
+            '';
+          };
+        };
       };
     };
 }
