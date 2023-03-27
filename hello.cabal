@@ -1,0 +1,17 @@
+cabal-version: 3.0
+name:          hello
+version:       0.1.0.0
+license:
+author:        Ruixi-rebirth
+maintainer:    ruixirebirth@gmail.com
+build-type:    Simple
+
+common warnings
+  ghc-options: -Wall
+
+executable hello
+  import:           warnings
+  main-is:          Main.hs
+  build-depends:    base
+  hs-source-dirs:   src
+  default-language: Haskell2010
