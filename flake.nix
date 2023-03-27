@@ -97,6 +97,7 @@
               mdbook
             ];
             shellHook = ''
+              cd tutorial/
               export PS1="\e[0;32m(haskell)\$ \e[m" 
             '';
           };
